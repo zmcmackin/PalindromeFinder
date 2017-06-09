@@ -27,7 +27,9 @@ public abstract class BasePalindromeFinder {
 
 	/**
 	 * number of digits each factor should contain must be a positive integer
-	 * @param factorLength must be positive integer
+	 * 
+	 * @param factorLength
+	 *            must be positive integer
 	 * @throws IllegalArgumentException
 	 */
 	public void setFactorLength(int factorLength) throws IllegalArgumentException {
@@ -38,8 +40,9 @@ public abstract class BasePalindromeFinder {
 	}
 
 	/**
-	 * verifies that the numberToCheck is a palindrome
-	 * marked static to denote that it does not rely of class members
+	 * verifies that the numberToCheck is a palindrome marked static to denote
+	 * that it does not rely of class members
+	 * 
 	 * @param numberToCheck
 	 * @return boolean value representing if the input is palindromic
 	 */
@@ -57,7 +60,8 @@ public abstract class BasePalindromeFinder {
 	/**
 	 * flips the digits of an integer
 	 * 
-	 * @param input integer to reverse
+	 * @param input
+	 *            integer to reverse
 	 * @return the reverse lexicographical order of the input
 	 */
 	private static int reverseInt(int input) {
@@ -76,7 +80,7 @@ public abstract class BasePalindromeFinder {
 			// in this case removing the last digit
 			input = input / 10;
 		}
-		
+
 		return reversedInt;
 
 	}

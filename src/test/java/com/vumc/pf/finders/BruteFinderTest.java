@@ -46,7 +46,7 @@ public class BruteFinderTest {
 	}
 
 	@Test(expected = IllegalStateException.class)
-	public void test_IntegerOverflowIllegalState(){
+	public void test_IntegerOverflowIllegalState() {
 		bruteFinder.setFactorLength(10);
 		bruteFinder.findPalindrome();
 	}
