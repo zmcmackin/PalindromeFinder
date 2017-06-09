@@ -35,6 +35,9 @@ public class PalindromeFinderCLI {
 				int factorLength = reader.nextInt();
 				stopWatch.reset();
 				stopWatch.start();
+				
+				System.out.println(String.format(SEARCHING_FORMAT, factorLength));
+				
 				PalindromeResult finderResult;
 				try{
 				finderResult = executeFinder(factorLength);
@@ -64,7 +67,7 @@ public class PalindromeFinderCLI {
 			throw e;
 		}
 
-		System.out.println(String.format(SEARCHING_FORMAT, factorLength));
+		
 
 		PalindromeResult finderResult;
 		try {
