@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
  * @author Zack
  *
  */
-public class PalindromeTests {
+public class PalindromeTestHelper {
 
 	/**
 	 * tests the PalindromeResult that is the greatest palindromic product of two numbers with two digits

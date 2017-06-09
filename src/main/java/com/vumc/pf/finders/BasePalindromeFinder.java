@@ -16,7 +16,9 @@ public abstract class BasePalindromeFinder {
 		if (factorLength <= 0)
 			throw new IllegalStateException("Factor Length must be set to a positive integer.");
 
-		return new PalindromeResult();
+		PalindromeResult result = new PalindromeResult();
+		result.setFactorLength(factorLength);
+		return result;
 	}
 
 	public int getFactorLength() {
@@ -25,24 +27,23 @@ public abstract class BasePalindromeFinder {
 
 	/**
 	 * number of digits each factor should contain must be a positive integer
-	 * must also be less than 9 or 10^10 for the max factor value will exceed the max integer value of 2,147,483,647
-	 * @param factorLength
+	 * @param factorLength must be positive integer
 	 * @throws IllegalArgumentException
 	 */
 	public void setFactorLength(int factorLength) throws IllegalArgumentException {
-		if (factorLength <= 0 || factorLength > 9)
-			throw new IllegalArgumentException("Palindrome factor length must be greater than 0 and less than 10");
+		if (factorLength <= 0)
+			throw new IllegalArgumentException("Palindrome factor length must be greater than 0");
 
 		this.factorLength = factorLength;
 	}
 
 	/**
 	 * verifies that the numberToCheck is a palindrome
-	 * 
+	 * marked static to denote that it does not rely of class members
 	 * @param numberToCheck
-	 * @return
+	 * @return boolean value representing if the input is palindromic
 	 */
-	protected static boolean isPalindrome(int numberToCheck) {
+	public static boolean isPalindrome(int numberToCheck) {
 
 		boolean result = false;
 
@@ -56,8 +57,8 @@ public abstract class BasePalindromeFinder {
 	/**
 	 * flips the digits of an integer
 	 * 
-	 * @param input
-	 * @return
+	 * @param input integer to reverse
+	 * @return the reverse lexicographical order of the input
 	 */
 	private static int reverseInt(int input) {
 

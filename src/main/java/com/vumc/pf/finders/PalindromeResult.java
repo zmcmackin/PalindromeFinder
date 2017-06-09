@@ -4,6 +4,7 @@ public class PalindromeResult {
 	private int palindrome = 0;
 	private int factor1 = 0;
 	private int factor2 = 0;
+	private int factorLength = 0;
 	
 	public int getPalindrome() {
 		return palindrome;
@@ -23,5 +24,10 @@ public class PalindromeResult {
 	public void setFactor2(int factor2) {
 		this.factor2 = factor2;
 	}
-	
+	public int getFactorLength() {
+		return factorLength;
+	}
+	public void setFactorLength(int factorLength) {
+		this.factorLength = factorLength;
+	}
 }
