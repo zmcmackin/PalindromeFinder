@@ -46,7 +46,7 @@ public class BruteFinderTest {
 		PalindromeResult result = bruteFinder.findPalindrome();
 	}
 	
-	@Test
+	//@Test
 	public void test_BruteFinderFactorLength6(){
 		bruteFinder.setFactorLength(6);
 		@SuppressWarnings("unused")
