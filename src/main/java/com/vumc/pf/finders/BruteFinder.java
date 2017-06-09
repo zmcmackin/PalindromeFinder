@@ -3,7 +3,7 @@ package com.vumc.pf.finders;
 public class BruteFinder extends BasePalindromeFinder {
 
 	private static final String INT_OVERFLOW_ERROR_MSG = 
-			"must be less than 9 or the max factor value (10^factor) will exceed the max integer value of 2,147,483,647";
+			"BruteFinder factorLength must be less than 9 or the max factor value (10^factorLength) will exceed the max integer value of 2,147,483,647\n";
 
 	// input factorLength must be > 0
 	public PalindromeResult findPalindrome() throws IllegalArgumentException {

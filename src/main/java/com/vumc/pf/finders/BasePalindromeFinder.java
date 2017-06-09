@@ -1,7 +1,7 @@
 package com.vumc.pf.finders;
 
 public abstract class BasePalindromeFinder {
-
+	private static final String FACTOR_LENGTH_MUST_BE_A_POSITIVE_INTEGER = "Palindrome factor length must be a positive integer.\n";
 	private int factorLength;
 
 	/**
@@ -13,9 +13,6 @@ public abstract class BasePalindromeFinder {
 	 * @throws IllegalStateException
 	 */
 	public PalindromeResult findPalindrome() throws IllegalStateException {
-		if (factorLength <= 0)
-			throw new IllegalStateException("Factor Length must be set to a positive integer.");
-
 		PalindromeResult result = new PalindromeResult();
 		result.setFactorLength(factorLength);
 		return result;
@@ -34,7 +31,7 @@ public abstract class BasePalindromeFinder {
 	 */
 	public void setFactorLength(int factorLength) throws IllegalArgumentException {
 		if (factorLength <= 0)
-			throw new IllegalArgumentException("Palindrome factor length must be greater than 0");
+			throw new IllegalArgumentException(FACTOR_LENGTH_MUST_BE_A_POSITIVE_INTEGER);
 
 		this.factorLength = factorLength;
 	}

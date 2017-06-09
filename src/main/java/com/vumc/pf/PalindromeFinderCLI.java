@@ -15,7 +15,7 @@ public class PalindromeFinderCLI {
 	private static final String USER_INPUT_STRING = "How many digits would you like numbers that make the palindromic product to have? (2-9)";
 	private static final String SEARCHING_FORMAT = "Searching for palindromes with two factors of %d digits...";
 	private static final String OUTPUT_FORMAT = "Largest palindrome made from the product of two numbers of %d digits: %d\n"
-			+ "\t Factor 1: %d\n" + "\t Factor 2: %d\n" + "\t Excution time: %s";
+			+ "\t Factor 1: %d\n" + "\t Factor 2: %d\n" + "\t Excution time: %s\n";
 	private static final String CONTINUE_STRING = "Would you like to try again? (Y/N)";
 	private static final String THANK_YOU_STRING = "Thank you and have a great day!";
 
@@ -35,7 +35,16 @@ public class PalindromeFinderCLI {
 				int factorLength = reader.nextInt();
 				stopWatch.reset();
 				stopWatch.start();
-				PalindromeResult finderResult = executeFinder(factorLength);
+				PalindromeResult finderResult;
+				try{
+				finderResult = executeFinder(factorLength);
+				}catch (IllegalArgumentException e){
+					shouldLoop = shouldLoop(reader);
+					continue;
+				}catch (IllegalStateException e){
+					shouldLoop = shouldLoop(reader);
+					continue;
+				}
 				stopWatch.stop();
 				displayResult(finderResult, stopWatch.toString());
 				shouldLoop = shouldLoop(reader);
@@ -78,8 +87,8 @@ public class PalindromeFinderCLI {
 		boolean result = false;
 
 		System.out.println(CONTINUE_STRING);
-
 		String input = reader.next();
+		System.out.println();
 
 		if (input.equalsIgnoreCase("Y")) {
 			result = true;
